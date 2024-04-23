@@ -1,0 +1,38 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+using namespace std;
+class Score{
+private:
+	string name;
+	string id;
+	int chinese;
+	int english;
+	int math;
+	int science;
+	int society;
+public:
+	void setScore(string n,string i,int c,int e,int m,int sc,int so){
+		name=n;
+		id=i;
+		chinese=c;
+		english=e;
+		math=m;
+		science=sc;
+		society=so;	
+	}
+	double average(){
+		return (chinese+english+math+science+society)/5.0;
+	}
+	void print(){
+		cout<<name<<" "<<id<<" "<<fixed<<setprecision(2)<<average()<<endl;
+	}
+};
+int main(){
+	Score score;
+	string n,i;
+	int c,e,m,sc,so;
+	cin>>n>>i>>c>>e>>m>>sc>>so;
+	score.setScore(n,i,c,e,m,sc,so);
+	score.print();
+} 
