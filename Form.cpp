@@ -1,72 +1,53 @@
 #include "Form.h"
 #include<iomanip>
-// Construct
 Form::Form() : name(""), ID(""), math(0), english(0), chinese(0), computer(0), society(0) {}
-
-Form::Form(string name, string ID, double math, double english, double chinese, double computer, double society) :
-    name(name), ID(ID), math(math), english(english), chinese(chinese), computer(computer), society(society) {}
-// Setters
-void Form::setName(string name) {
-    this->name = name;
+Form::Form(string n, string d, double m, double e, double c, double t, double s) :
+    name(n), ID(d), math(m), english(e), chinese(c), computer(t), society(s) {}
+void Form::setName(string n) {
+    name = n;
 }
-
-void Form::setID(string ID) {
-    this->ID = ID;
+void Form::setID(string d) {
+    ID = d;
 }
-
-void Form::setMath(double math) {
-    this->math = math;
+void Form::setMath(double m) {
+    math = m;
 }
-
-void Form::setEnglish(double english) {
-    this->english = english;
+void Form::setEnglish(double e) {
+    english = e;
 }
-
-void Form::setChinese(double chinese) {
-    this->chinese = chinese;
+void Form::setChinese(double c) {
+    chinese = c;
 }
-
-void Form::setComputer(double computer) {
-    this->computer = computer;
+void Form::setComputer(double t) {
+    computer = t;
 }
-
-void Form::setSociety(double society) {
-    this->society = society;
+void Form::setSociety(double s) {
+    society = s;
 }
-
-// Getters
 string Form::getName() {
-    return this->name;
+    return name;
 }
-
 string Form::getID() {
-    return this->ID;
+    return ID;
 }
-
 double Form::getMath() {
-    return this->math;
+    return math;
 }
-
 double Form::getEnglish() {
-    return this->english;
+    return english;
 }
-
 double Form::getChinese() {
-    return this->chinese;
+    return chinese;
 }
-
 double Form::getComputer() {
-    return this->computer;
+    return computer;
 }
-
 double Form::getSociety() {
-    return this->society;
+    return society;
 }
-
 double Form::getAverage() {
     return (math + english + chinese + computer + society) / 5;
 }
-
 char Form::getGrade() {
     double average = getAverage();
     if (average >= 90) {
@@ -86,13 +67,14 @@ char Form::getGrade() {
     }
 }
 void Form::print() {
-    cout << "Name: " << this->name << endl;
-    cout << "ID: " << this->ID << endl;
-    cout << "Math: " << this->math << endl;
-    cout << "English: " << this->english << endl;
-    cout << "Chinese: " << this->chinese << endl;
-    cout << "Computer: " << this->computer << endl;
-    cout << "Society: " << this->society << endl;
+    cout << "Name: " << name << endl;
+    cout << "ID: " << ID << endl;
+    cout << "Math: " << math << endl;
+    cout << "English: " << english << endl;
+    cout << "Chinese: " << chinese << endl;
+    cout << "Computer: " << computer << endl;
+    cout << "Society: " << society << endl;
     cout << "Average: " << fixed << setprecision(1) << getAverage() << endl;
     cout << "Grade: " << getGrade() << endl;
+    cout << endl;
 }
